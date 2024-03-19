@@ -12,9 +12,9 @@ import SearchBox from './components/SearchBox/SearchBox';
 // ];
 
 const localStorageContacts = () => {
-  const contactsList = window.localStorage.getItem("contacts");
+  const contactsList = localStorage.getItem("contacts");
 
-  return contactsList !== null ? JSON.parse(contactsList) : [];
+  return contactsList ? JSON.parse(contactsList) : [];
 };
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    window.localStorage.setItem("contacts", JSON.stringify(contacts));
+    localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
   
 
@@ -48,7 +48,7 @@ const App = () => {
       <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
       {contacts.length !== 0 ? (
-        <ContactList contacts={{ filterContacts }} onDelete={deleteContact} />
+        <ContactList contacts={filterContacts} onDelete={deleteContact} />
       ) : (
         <p className='text'>Phonebook is empty!</p>
       )

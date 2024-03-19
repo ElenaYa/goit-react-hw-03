@@ -5,7 +5,7 @@ const Contact = ({ contact: { name, number, id }, onDelete }) => {
 
   return (
     <div className={css.contactContainer}>
-      <div>
+      <div className={css.wrapper}>
         <p className={css.text}>
           <FaUser className={css.icon}/>
           {name}
@@ -15,7 +15,7 @@ const Contact = ({ contact: { name, number, id }, onDelete }) => {
           {number}
         </p>
       </div>
-          <button type="button" onClick={() => { onDelete(id) }}>
+          <button type="button" className={css.button} onClick={() => { onDelete(id) }}>
         Delete
       </button>
     </div>
