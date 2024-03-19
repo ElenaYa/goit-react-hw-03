@@ -1,0 +1,28 @@
+.form {
+  border: 2px solid #141414;
+  border-radius: 4px;
+  max-width: 400px;
+  padding: 12px;
+}
+
+.input {
+  width: 360px;
+  height: 32px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  background-color: rgb(215, 219, 222);
+  color: #141414;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4px 8px;
+  color: #141414;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
